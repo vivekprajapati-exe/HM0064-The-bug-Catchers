@@ -1,0 +1,46 @@
+# === Backend (Node.js) ===
+# Environment variables
+server/.env
+
+# Dependencies
+server/node_modules/
+
+# Logs and temporary files
+server/logs/
+server/.npm/
+server/.env.*
+server/.DS_Store
+
+# === Frontend (React/Vite) ===
+# Dependencies
+client/node_modules/
+
+# Build files
+client/dist/
+client/build/
+client/.vite/
+client/.eslintcache
+
+# Environment variables
+client/.env
+client/.env.local
+client/.env.*.local
+
+# === General ===
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Debug files
+*.log
+*.pid
+*.seed
