@@ -1,31 +1,25 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const cors = require("cors");
 
-// Load environment variables
-dotenv.config();
-
-// Initialize Express
+const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const AuthRouter = require('./routes/auth');
 
-// Middleware
-app.use(cors()); // Allow React to connect
-app.use(express.json()); // Parse JSON bodies
 
-// Database Connection
-mongoose
-    .connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB Connected!"))
-    .catch((err) => console.error(err));
-
-// Test Route
-app.get("/", (req, res) => {
-    res.send("Backend is running!");
-});
-
-// Start Server
+require('dotenv').config();
+require('./models/db');
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+app.get('/', (req, res) => {
+    res.send('SHHHH Backend running');
 });
+
+app.use(bodyParser.json());
+app.use(cors());
+app.use('/auth', AuthRouter);
+
+
+
+app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT}`)
+})
