@@ -1,8 +1,30 @@
 {
-    "routes":[
-        {
-            "src":"/[^.]+",
-            "dest":"/"
+    "version": 2,
+    "builds": [
+      {
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist",
+          "cleanUrls": true,
+          "outputDirectory": "client/dist"
         }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/assets/(.*)",
+        "dest": "client/dist/assets/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "client/dist/index.html",
+        "headers": {
+          "Cache-Control": "s-maxage=0, stale-while-revalidate=60"
+        }
+      }
+    ],
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/client/dist/index.html" }
     ]
-}
+  }
