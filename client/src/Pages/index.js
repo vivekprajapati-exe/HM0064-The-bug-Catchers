@@ -3,6 +3,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Chat from "./Chat";
+import EventTimeline from "./EventTimeline";
 
 export{
     Home,
@@ -10,4 +11,5 @@ export{
     Login,
     Dashboard,
     Chat,
+    EventTimeline,
 }
