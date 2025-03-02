@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { DashboardComp } from '../components'
 function Dashboard() {
   return (
     <div>
-      <h1>Dashboard , lets begin</h1>
+      <DashboardComp/>
     </div>
   )
 }

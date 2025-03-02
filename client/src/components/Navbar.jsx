@@ -10,8 +10,10 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Events", path: "/timeline" },
-    { name: "Calendar", path: "/calendar" },
+    { name: "Chat", path: "/chat" },
     { name: "Dashboard", path: "/dashboard" },
+    { name: "signup", path: "/signup" },
+    { name: "login", path: "/login" },
   ];
 
   // Animation variants
@@ -40,7 +42,7 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className="w-full bg-white/80 backdrop-blur-md shadow-sm fixed top-0 z-50"
+      className="w-full bg-slate-800 backdrop-blur-md shadow-sm fixed top-0 z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

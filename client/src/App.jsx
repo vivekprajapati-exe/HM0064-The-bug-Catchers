@@ -7,7 +7,7 @@ import { Navbar } from "./components";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen   bg-slate-800">
         <Navbar />
         <div className="pt-16">
       <Routes>

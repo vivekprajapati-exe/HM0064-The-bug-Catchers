@@ -1,9 +1,10 @@
 import React from 'react'
+import { AuthForm } from '../components'
 
 function Login() {
   return (
     <div>
-      <h1>Login</h1>
+      <AuthForm type="login" />
     </div>
   )
 }
